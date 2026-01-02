@@ -73,8 +73,27 @@ body{
     animation: buttonPulse 1.5s infinite;
 
 }
+.section-Two{
+    background-color: #4560e8;
+    color: lightgray;
+    padding: 100px;
+}
 .section-Two img{
     width: 360px;
+
+}
+.about-me{
+    margin: 0 auto;
+    text-align: center;
+}
+.about-me pre{
+    background: #b9d5ef5a;
+    padding: 20px;
+    border-radius: 20px;
+    border-left: #255cff;
+    overflow-x: auto;
+    font-family: 'Courier New';
+    
 }
 
 @keyframes fadeInUp{
