@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI',  sans-serif;
+}
+.header{
+    margin-top: 100px;
+}
+.header,h1  {
+    animation: fadeInUp 1.7s ease-out;
+}
+.header h1{
+    background-image: url(../Images/text-clip01.jpg);
+    /* background-position:  center; */
+    background-size: cover;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* font-size: ; */
+}
+.section-One{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../Images/hcfg.jpg");
+    text-align: center;
+
+}
+.section-One figure img{
+    width: 175px;
+    height: 175px;
+    border: 4px solid #255cff;
+    border-radius: 50%;
+    margin-top: 55px;
+    box-shadow: 0 0 15px rgb(41, 29, 42);
+    
+}
+.section-One figure figcaption{
+    color: rgb(255, 255, 255);
+    /* display: inline-block; */
+    width: 0;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    border-right: 3px solid #255cff;
+    white-space: nowrap;
+    animation: typing 5.5s steps(19) infinite;
+}
+.my-button{
+    color: black;
+    background: #255cff;
+    text-decoration: none;
+    border: 2px solid #458df0;
+    border-radius: 15px;
+    padding: 13px;
+    cursor: pointer;
+    margin: auto;
+    box-shadow: 0 0 10px rgb(240, 237, 237);
+    transition: all 0.4s ease;
+}
+.my-button:hover{
+    background-color: transparent;
+    color: azure;
+    animation: buttonPulse 1.5s infinite;
+
+}
+.section-Two img{
+    width: 360px;
+}
+
+@keyframes fadeInUp{
+    from{
+    opacity: 0;
+    transform: translateY(20px);
+}
+to{
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+@keyframes buttonPulse{
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(255, 255, 255, 0.7);;}
+    50% { transform: scale(1.1);box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);}
+    100% { transform: scale(1);box-shadow: 0 0 0 rgba(255, 255, 255, 0);}
+}
+@keyframes typing {
+0% {
+    width: 0;
+}
+40%{
+    width: 19ch;
+}
+90%{
+    width: 19ch;
+}
+100%{
+    width: 0;
+}
+}
+@keyframes cursorBlink {
+    50%{
+        border-color: transparent;
+    }
+}
