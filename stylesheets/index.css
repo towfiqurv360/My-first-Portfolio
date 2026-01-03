@@ -76,24 +76,71 @@ body{
 .section-Two{
     background-color: #4560e8;
     color: lightgray;
-    padding: 100px;
+    padding: 50px 20px;
 }
 .section-Two img{
-    width: 360px;
+    width: 350px;
+    /* max-width: 100%; */
+    /* height: auto; */
 
 }
 .about-me{
+    max-width: 1000px;
     margin: 0 auto;
+    /* text-align: center; */
+}
+.about-me h3{
     text-align: center;
+    margin-bottom: 40px;
+    color: white;
+    border-bottom: 2px solid #255cff;
+    display: inline-block;
 }
 .about-me pre{
-    background: #b9d5ef5a;
+    background: #1e1e1e;
     padding: 20px;
-    border-radius: 20px;
-    border-left: #255cff;
+    border-radius: 10px;
+    border-left: 5px solid #0333c4;
     overflow-x: auto;
-    font-family: 'Courier New';
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 30px;
+    color: #d4d4d4;
     
+}
+
+
+.entro-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.entro-container p{
+    flex: 1 1 100%;
+    line-height: 1.6;
+    /* margin-bottom: 20px;
+    align-items: center; */
+    text-align: justify;
+    /* width: 50%; */
+
+}
+.entro-container img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    display: block;
+    margin: 20px auto;
+}
+.details-container p {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5 15px rgb(0,0,0,0.2);
 }
 
 @keyframes fadeInUp{
@@ -129,4 +176,32 @@ to{
     50%{
         border-color: transparent;
     }
+}
+
+@media (min-width: 768px) {
+    .section-Two{
+        padding: 100px;
+    }
+    .entro-container{
+        flex-direction: row;
+        /* align-items: center; */
+        
+    }
+    .entro-container p {
+        /* width: 50%; */
+        padding-right: 40px;
+        flex: 1;
+        margin-bottom: 0;
+    }
+    .entro-container img {
+        width: 40%;
+        flex: 0 0 350px;
+        width: 350px;
+        max-width: 40%;
+        height: auto;
+        margin: 0;
+        /* object-fit: cover; */
+        /* margin-left: 40px; */
+    }
+
 }
