@@ -13,7 +13,7 @@ body{
     animation: fadeInUp 1.7s ease-out;
 }
 .header h1{
-    background-image: url(../Images/text-clip01.jpg);
+    background-image: url(../images/text-clip01.jpg);
     /* background-position:  center; */
     background-size: cover;
     color: transparent;
@@ -31,7 +31,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../Images/hcfg.jpg");
+    background-image: url("../images/hcfg.jpg");
     text-align: center;
 
 }
