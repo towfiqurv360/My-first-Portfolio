@@ -118,6 +118,7 @@ body{
 }
 .entro-container p{
     flex: 1 1 100%;
+    color: #ffffff;
     line-height: 1.6;
     /* margin-bottom: 20px;
     align-items: center; */
@@ -204,4 +205,24 @@ to{
         /* margin-left: 40px; */
     }
 
+}
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #1447df;
+    border-top: 2px solid #255cff;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+.player-info{
+    /* border-bottom: 1px solid #00eaff; */
+    text-align: justify;
+    text-transform: uppercase;
+    color: #00eaff;
+    
+}
+.gateways {
+    padding: 20px;
+    text-align: right;
 }
