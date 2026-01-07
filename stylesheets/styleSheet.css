@@ -51,6 +51,26 @@ body {
     min-width: 80px; /* ফিক্সড উইডথ যাতে হোভার করলে মেনু নড়ে না যায় */
 }
 
+.my-button{
+    color: black;
+    background: #255cff;
+    text-decoration: none;
+    border: 2px solid #458df0;
+    border-radius: 10px;
+    padding: 13px;
+    cursor: pointer;
+    margin: auto;
+    box-shadow: 0 0 10px rgb(240, 237, 237);
+    transition: all 0.4s ease;
+    font-weight: bold;
+}
+.my-button:hover{
+    background-color: transparent;
+    color: azure;
+    animation: buttonPulse 1.5s infinite;
+
+}
+
 /* ---- ৩. ডেস্কটপ ভিউ (Hover Swap Magic) ---- */
 /* শুধুমাত্র ল্যাপটপ/পিসিতে এই ম্যাজিক কাজ করবে */
 @media (min-width: 769px) {

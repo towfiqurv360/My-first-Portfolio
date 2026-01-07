@@ -1,29 +1,16 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>ESTABLISH CONNECTION</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <link rel="stylesheet" href="stylesheets/contact.css">
-
     <link rel="stylesheet" href="stylesheets/styleSheet.css">
-
 </head>
-
 <body>
-
     <header>
-
     <div class="section-One">
-
         <nav class="nav-bar">
     <h2 class="logo"><span style="color: #00eaff;">[ T</span ><span style="color: #ff8800;">R ]</span></h2>
 
@@ -59,208 +46,95 @@
         </li>
     </ul> 
 </nav>
-
     </header>
-    <main>
-
-    <h3>ESTABLISH CONNECTION</h3>
-
-    <p><em>"Send a signal across the Dimension.Awaiting user input..."</em></p>
-
-    <form action="">
-
-        <label for="User Identity">User Identity:</label>
-
-    <input type="text" name="User Identity" placeholder="Enter your name or code name"><br>
-
-    <label for="Comms link">Comms link:</label>
-
-    <input type="email" name="Comms link" id="Comms link" placeholder="Enter valid email frequency"><br>
-
-    <label for="Data Packet">Data Packet:</label>
-
-    <textarea rows="4" name="Data Packet" placeholder="Input your message coordinates here..." maxlength="500"></textarea><br>
-
-    <input class="my-button" type="submit" value="[EXECUTE TRANSMISSION]">
-
-</form>
-
-    <footer>
-
-        <div class="player-info">
-
-            <h3>ARCHITECT: TOWFIQUR RAHMAN</h3>
-
-            <P>CLASS: System Architect & Web Developer</P>
-
-            <p>RANK: S-Class Engineer</p>
-
-            <p>SKILL: Reality Compilation</p>
-
-            <p>GUILD: The Solo Architect</p>
-
-        </div>
-
-        <div class="gateways">
-
-            <h3>[EXTERNAL GATEWAYS]</h3>
-
-            <div class="socil-details">
-
-                  <a href="https://www.facebook.com/" target="_blank">
-
-                       <i class="fa-brands fa-facebook" style=""></i><span>Hunter Guild (FB)</span>
-
-                  </a>
-
-                  <a href="https://github.com/dashboard"     target="_blank">
-
-                     <i class="fa-brands fa-github"></i><span>Source Code (GitHub)</span>
-
-                   </a>
-
-                   <!-- <a href="" target="_blank"> <span></span></a>
-
-                   <a href="" target="_blank"> <span></span></a>
-
-                   <a href="" target="_blank"> <span></span></a>
-
-                   <a href="" target="_blank"> <span></span></a> -->
-
-             </div>
-
-             <div class="contact-info">
-
-                <p><i class="fa-solid fa-envelope"></i> towfiqurv360@gmail.com</p>
-
-                <p><i class="fa-brands fa-whatsapp"></i> +880 1576-601379</p>
-
-                <p><i class="fa-solid fa-phone"></i> +880 1576-601379</p>
-
-             </div>
-
-        </div>
-
-        <div class="system-status">
-
-            <p>System Status: © 2026 Towfiqur's Dimension. All Rights Reserved.</p>
-
-        </div>
- </main>
-    </footer>
-
-</body>
-
-<script>
-
     
-
+    <footer>
+        <div class="player-info">
+            <h3>ARCHITECT: TOWFIQUR RAHMAN</h3>
+            <P>CLASS: System Architect & Web Developer</P>
+            <p>RANK: S-Class Engineer</p>
+            <p>SKILL: Reality Compilation</p>
+            <p>GUILD: The Solo Architect</p>
+        </div>
+        <div class="gateways">
+            <h3>[EXTERNAL GATEWAYS]</h3>
+            <div class="socil-details">
+                  <a href="https://www.facebook.com/" target="_blank">
+                       <i class="fa-brands fa-facebook" style=""></i><span>Hunter Guild (FB)</span>
+                  </a>
+                  <a href="https://github.com/dashboard"     target="_blank">
+                     <i class="fa-brands fa-github"></i><span>Source Code (GitHub)</span>
+                   </a>
+                   <!-- <a href="" target="_blank"> <span></span></a>
+                   <a href="" target="_blank"> <span></span></a>
+                   <a href="" target="_blank"> <span></span></a>
+                   <a href="" target="_blank"> <span></span></a> -->
+             </div>
+             <div class="contact-info">
+                <p><i class="fa-solid fa-envelope"></i> towfiqurv360@gmail.com</p>
+                <p><i class="fa-brands fa-whatsapp"></i> +880 1576-601379</p>
+                <p><i class="fa-solid fa-phone"></i> +880 1576-601379</p>
+             </div>
+        </div>
+        <div class="system-status">
+            <p>System Status: © 2026 Towfiqur's Dimension. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+<script>
+    
     function toggleMenu() {
-
         const menu = document.getElementById("navLinks");
-
         const icon = document.querySelector(".menu-icon i");
-
         
-
         menu.classList.toggle("active");
 
-
-
         if (menu.classList.contains("active")) {
-
             icon.classList.remove("fa-bars");
-
             icon.classList.add("fa-xmark");
-
             icon.style.color = "#ff8800";
-
         } else {
-
             icon.classList.remove("fa-xmark");
-
             icon.classList.add("fa-bars");
-
             icon.style.color = "#fff";
-
         }
-
     }
 
-
-
    
-
     document.addEventListener("DOMContentLoaded", function() {
-
         const codeElement = document.querySelector('.code-wrapper pre code');
-
         if (!codeElement) return;
 
-
-
         const originalHTML = codeElement.innerHTML; 
-
         codeElement.innerHTML = ""; 
-
         codeElement.classList.add('typing-cursor'); 
 
-
-
         let index = 0;
-
         let isTag = false;
-
         let textBuffer = "";
 
-
-
         function typeWriter() {
-
             if (index < originalHTML.length) {
-
                 let char = originalHTML.charAt(index);
 
-
-
                 if (char === "<") isTag = true;
-
                 if (char === ">") {
-
                     isTag = false; 
-
                     textBuffer += char;
-
                     codeElement.innerHTML = textBuffer; 
-
                 } else if (isTag) {
-
                     textBuffer += char; 
-
                 } else {
-
                     textBuffer += char; 
-
                     codeElement.innerHTML = textBuffer; 
-
                 }
 
-
-
                 index++;
-
                 let speed = isTag ? 0 : 40; 
-
                 setTimeout(typeWriter, speed);
-
             }
-
         }
-
         setTimeout(typeWriter, 1000);
-
     });
-
 </script>
-
 </html>

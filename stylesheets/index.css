@@ -55,24 +55,7 @@
     white-space: nowrap;
     animation: typing 5.5s steps(19) infinite, cursorBlink .75s step-end infinite;
 }
-.my-button{
-    color: black;
-    background: #255cff;
-    text-decoration: none;
-    border: 2px solid #458df0;
-    border-radius: 10px;
-    padding: 13px;
-    cursor: pointer;
-    margin: auto;
-    box-shadow: 0 0 10px rgb(240, 237, 237);
-    transition: all 0.4s ease;
-}
-.my-button:hover{
-    background-color: transparent;
-    color: azure;
-    animation: buttonPulse 1.5s infinite;
 
-}
 .section-Two{
     background-color: #4560e8;
     color: lightgray;
