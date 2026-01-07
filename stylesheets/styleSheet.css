@@ -1,16 +1,147 @@
-*{
+/* ---- ১. গ্লোবাল রিসেট এবং বেসিক ---- */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Segoe UI',  sans-serif;
+body {
+    font-family: 'Segoe UI', sans-serif;
     overflow-x: hidden; 
     width: 100%;
 }
 
-footer{
+/* ---- ২. ন্যাভবার (কমন স্টাইল) ---- */
+.nav-bar {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* লোগো ও মেনু সমান লাইনে থাকবে */
+    padding: 0 50px;
+}
+
+/* মেনু আইকন (ডিফল্টভাবে লুকানো থাকবে - ডেস্কটপের জন্য) */
+.menu-icon {
+    display: none; /* ল্যাপটপে দেখাবে না */
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* মেনু লিস্ট (কমন) */
+.nav-bar ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex; /* আইকন ও টেক্সট সাজানোর জন্য */
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    min-width: 80px; /* ফিক্সড উইডথ যাতে হোভার করলে মেনু নড়ে না যায় */
+}
+
+/* ---- ৩. ডেস্কটপ ভিউ (Hover Swap Magic) ---- */
+/* শুধুমাত্র ল্যাপটপ/পিসিতে এই ম্যাজিক কাজ করবে */
+@media (min-width: 769px) {
+    /* স্বাভাবিক অবস্থায়: আইকন লুকানো */
+    .nav-bar ul li a i {
+        display: none; 
+        font-size: 1.3rem;
+        color: #00eaff;
+    }
+    
+    /* স্বাভাবিক অবস্থায়: টেক্সট দৃশ্যমান */
+    .nav-bar ul li a span {
+        display: inline-block;
+        transition: 0.3s ease;
+    }
+
+    /* হোভার করলে: আইকন ভেসে আসবে */
+    .nav-bar ul li a:hover i {
+        display: inline-block;
+        animation: fadeIn 0.3s ease;
+    }
+
+    /* হোভার করলে: টেক্সট গায়েব হবে */
+    .nav-bar ul li a:hover span {
+        display: none;
+    }
+
+    /* হোভার এফেক্ট (গ্লো) */
+    .nav-bar ul li a:hover {
+        transform: scale(1.1);
+        text-shadow: 0 0 10px #00eaff;
+    }
+}
+
+/* আইকন আসার এনিমেশন */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- ৪. মোবাইল ভিউ (হ্যামবার্গার মেনু) ---- */
+@media (max-width: 768px) {
+    .nav-bar {
+        padding: 0 20px;
+        top: 20px;
+    }
+
+    /* মোবাইলে মেনু আইকন দেখা যাবে */
+    .menu-icon {
+        display: block;
+    }
+
+    /* মেনু সাইডবার ডিজাইন */
+    .nav-bar ul {
+        position: fixed;
+        top: 0;
+        right: -250px; /* স্ক্রিনের বাইরে লুকানো */
+        width: 250px;
+        height: 100vh;
+        background: rgba(10, 25, 47, 0.98); /* গ্লাস ব্ল্যাক */
+        border-left: 2px solid #00eaff;
+        box-shadow: -5px 0 15px rgba(0, 234, 255, 0.2);
+        
+        flex-direction: column; /* নিচে নিচে সাজানো */
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        transition: right 0.5s ease;
+        z-index: 1000;
+    }
+
+    /* জাভাস্ক্রিপ্ট দিয়ে যখন ক্লাস 'active' যোগ হবে */
+    .nav-bar ul.active {
+        right: 0;
+    }
+
+    /* মোবাইলে আইকন এবং টেক্সট দুটোই পাশাপাশি দেখাবে */
+    .nav-bar ul li a i {
+        display: inline-block;
+        margin-right: 10px;
+        color: #00eaff;
+    }
+    
+    .nav-bar ul li a span {
+        display: inline-block;
+    }
+}
+
+/* ---- ৫. ফুটার এবং অন্যান্য ---- */
+/* আপনার ফুটার এবং অন্যান্য কোড ঠিক আছে, ওগুলো এর নিচে রেখে দিন */
+footer {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -21,14 +152,11 @@ footer{
     box-shadow: 0 0 15px #d4d4d4;
     background-image: url(../images/Footer-main.jpg);
     background-repeat: no-repeat;
-    height: auto;
     background-position: center;
     background-size: cover;
-    /* border-radius: 15px; */
-    
 }
+/* ... বাকি ফুটার কোড যেমন আছে তেমনই রাখুন ... */
 .player-info{
-    /* border-bottom: 1px solid #00eaff; */
     text-align: justify;
     text-transform: uppercase;
     color: #00eaff;
@@ -47,39 +175,11 @@ footer{
     color: #00eaff;
 }
 .gateways {
-    /* padding: 20px; */
+   
     text-align: right;
     width: 50%;
 }
-/* .gateways a {
-    display: flex ;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: #a0a0a0;
-    transition: all 0.3s ease;
-} */
-/* .gateways a span {
-    max-width: 0;
-    opacity: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    transition: all o.5s ease;
-    color: #fff;
-    font-size: 0.9rem;
-} */
-.gateways a i {
-    font-size: 1.2rem;
-    /* color:#a5ecec; */
-    /* margin-left: 10px; */
-    z-index: 10;
-}
-.gateways a:hover span{
-    /* max-width: 200px; */
-    /* opacity: 1; */
-    /* margin-right: 10px; */
-}
+
 .gateways h3{
     color: #0e9af1;
 }
@@ -109,7 +209,7 @@ footer{
 }
 .socil-details a i {
     font-size: 1.5rem;
-    color: #00eaff;
+    color: #ffffff;
     transition: all 0.3s ease;
     z-index: 10;
     padding-top: 15px;
@@ -131,6 +231,7 @@ footer{
     transform: translateY(-10px);
     text-shadow: 0 0 20px #000a0a;
     background-color: transparent;
+    color: #00eaff;
     cursor: pointer;
 
 }
@@ -170,11 +271,6 @@ footer{
         justify-content: center;
 
     }
-    /* .gateways a span{
-        min-width: 100%;
-        opacity: 1;
-        margin-left: 10px;
-    } */
     .contact-info{
         align-items: center;
 

@@ -9,7 +9,43 @@
     <link rel="stylesheet" href="stylesheets/styleSheet.css">
 </head>
 <body>
+    <header>
     <div class="section-One">
+        <nav class="nav-bar">
+    <h2 class="logo"><span style="color: #00eaff;">[ T</span ><span style="color: #ff8800;">R ]</span></h2>
+
+    <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <ul id="navLinks">
+        <li>
+            <a href="index.html">
+                <i class="fa-solid fa-house-laptop"></i> <span>Home</span>
+            </a>
+        </li>
+        <li>
+            <a href="contact.html">
+                <i class="fa-solid fa-tower-broadcast"></i> <span>Contact</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-bolt"></i> <span>Abilities</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-cubes"></i> <span>Creations</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-file-contract"></i> <span>System Data</span>
+            </a>
+        </li>
+    </ul> 
+</nav>
         <div class="header">
            <h1>Step Into My Dimension!</h1>
            <p><em>Where imagination compiles into reality</em></p>
@@ -21,6 +57,8 @@
         
         <a href="#Character-info" class="my-button">[Know More About Me ↓]</a>
     </div>
+    </header> 
+    <main>
     <div class="section-Two" id="Character-info">
         <div class="about-me">
         <h3>Character Info</h3>
@@ -38,20 +76,31 @@
 
              <p>"I am currently seeking challenging opportunities where I can leverage my skills to create something new. If you value strategic thinking and precision in digital development, step into my dimension, and let's build something extraordinary together."</p>
         </div>
-<pre>
-<code>
-    const userProfile = {
-         name: "Md. Towfiqur Rahman",
-         education: "Diploma in Engineering",
-         currentLocation: "Rajshahi, Bangladesh",
-         mainTools: ["HTML5", "CSS3", "VS Code"],
-         hobbies: ["Anime", "Gaming", "Tech"],
-         status: "Ready to Collaborate"};
-</code>
-</pre>
+<div class="system-container">
+    <div class="sys-header">
+        <div class="dot-group">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <span class="sys-title">SYSTEM_CONSOLE.exe</span>
+    </div>
+
+    <div class="code-wrapper">
+        <pre><code><span class="keyword">const</span> <span class="var-name">architectProfile</span> = {
+    <span class="key">name</span>: <span class="string">"Md. Towfiqur Rahman"</span>,
+    <span class="key">class</span>: <span class="string">"S-Rank Engineer"</span>,
+    <span class="key">guild</span>: <span class="string">"Solo Developer"</span>,
+    <span class="key">skills</span>: [<span class="string">"HTML5"</span>, <span class="string">"CSS3"</span>, <span class="string">"Reality Manipulation"</span>],
+    <span class="key">status</span>: <span class="value">"ONLINE"</span>
+};</code></pre>
+        <div class="scanner-bar"></div>
+    </div>
+</div>
+
       </div>
-    </div>  
-        
+    </div>
+     </main>   
     <footer>
         <div class="player-info">
             <h3>ARCHITECT: TOWFIQUR RAHMAN</h3>
@@ -75,9 +124,9 @@
                    <a href="" target="_blank"> <span></span></a> -->
              </div>
              <div class="contact-info">
-                <p><i class="fa-solid fa-envelope"></i> your.email@gmail.com</p>
-                <p><i class="fa-brands fa-whatsapp"></i> +880 17XX-XXXXXX</p>
-                <p><i class="fa-solid fa-phone"></i> +880 19XX-XXXXXX</p>
+                <p><i class="fa-solid fa-envelope"></i> towfiqurv360@gmail.com</p>
+                <p><i class="fa-brands fa-whatsapp"></i> +880 1576-601379</p>
+                <p><i class="fa-solid fa-phone"></i> +880 1576-601379</p>
              </div>
         </div>
         <div class="system-status">
@@ -86,4 +135,61 @@
     </footer>
     
 </body>
+
+<script>
+    
+    function toggleMenu() {
+        const menu = document.getElementById("navLinks");
+        const icon = document.querySelector(".menu-icon i");
+        
+        menu.classList.toggle("active");
+
+        if (menu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+            icon.style.color = "#ff8800";
+        } else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+            icon.style.color = "#fff";
+        }
+    }
+
+   
+    document.addEventListener("DOMContentLoaded", function() {
+        const codeElement = document.querySelector('.code-wrapper pre code');
+        if (!codeElement) return;
+
+        const originalHTML = codeElement.innerHTML; 
+        codeElement.innerHTML = ""; 
+        codeElement.classList.add('typing-cursor'); 
+
+        let index = 0;
+        let isTag = false;
+        let textBuffer = "";
+
+        function typeWriter() {
+            if (index < originalHTML.length) {
+                let char = originalHTML.charAt(index);
+
+                if (char === "<") isTag = true;
+                if (char === ">") {
+                    isTag = false; 
+                    textBuffer += char;
+                    codeElement.innerHTML = textBuffer; 
+                } else if (isTag) {
+                    textBuffer += char; 
+                } else {
+                    textBuffer += char; 
+                    codeElement.innerHTML = textBuffer; 
+                }
+
+                index++;
+                let speed = isTag ? 0 : 40; 
+                setTimeout(typeWriter, speed);
+            }
+        }
+        setTimeout(typeWriter, 1000);
+    });
+</script>
 </html>
